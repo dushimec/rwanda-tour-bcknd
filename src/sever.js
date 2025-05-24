@@ -11,7 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev")); 
-
+app.get("/", (req, res) => {
+  res.send("Welcome to Rwanda Tour API");
+});
 app.use("/api/v1", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
